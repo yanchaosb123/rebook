@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="test.css" type="text/css" rel="stylesheet"/>
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>API 测试 模拟发送json请求</h1>
+		</header>
+
+	   <div class ="mainContent">
+	   	 <div class ="row center">
+			<label>服务程序地址</label> <input type="text" value="localhost:3000" readonly/>
+		 </div>
+          <div class ="row center">
+
+		 <button value="发送" id="send">发送</button>
+				
+			<label>请求路径</label>
+			<select type="select" id="pathSelect">
+			</select>
+		  </div>
+			<textarea class="tobeSend" id ="tobeSend" spellcheck="false">
+			</textarea>	
+	   </div>
+   </div>
+
+   		<textarea id="returnVal">
+   		</textarea>
+   		
+   <form action="bookCategory" method ="POST">
+	 <input type="hidden" name="msg" value="getBookCategory" />
+	 <input type="submit" value="确定" />
+	   
+   </form>
+	
+</body>
+	<script type ="text/javascript" src="jQuery.js"></script>
+
+	<script>
+		const OPTIONS =['test','bookCategory'];
+		const SENDSTR = "msg:\n";
+		
+		window.onload = () => {
+
+			const returnVal = document.getElementById('returnVal');
+			// API 路径地址
+			const pathSelect = document.getElementById('pathSelect');
+			// 待发送文字的初始化
+			const tobeSend = document.getElementById('tobeSend');
+
+			
+			for (var i = OPTIONS.length - 1; i >= 0; i--) {
+				let opt = document.createElement('option');
+				opt.value = opt.innerHTML = '/' + OPTIONS[i];
+				pathSelect.appendChild(opt);
+			};
+
+			
+			tobeSend.value = SENDSTR;
+
+			$('#send').click(doAjax);
+		}
+
+ // return jQuery.ajax({
+ //                url: url,
+ //                type: method,
+ //                dataType: type,
+ //                data: data,
+ //                success: callback
+ //            });
+
+
+		function doAjax() {
+
+			let arr = /^([\w.+-]+:)(?:\/\/([^\/?#:]*)(?::(\d+)|)|)/.exec(window.location.href);
+			$.ajax({
+				url: 'http://' + arr[2] + ':3000' + pathSelect.value,
+				type: 'post',
+
+				// dataType 为期望 success 中获得的响应的类型，
+				// 如果是text,得到的是返回的字符，如果是 json,得到是 json 转化后的对象 
+				dataType: 'text',
+				data: {
+					msg:'getBookCategory'
+				},
+				success: (res) => {
+					returnVal.value = res;
+				}
+				
+
+				});
+		}
+
+
+	</script>
+</html>

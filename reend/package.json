@@ -1,0 +1,35 @@
+{
+  "name": "rebook",
+  "version": "1.0.0",
+  "description": "a website for reading book",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website",
+    "book",
+    "nodejs"
+  ],
+  "author": "davidstark",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/cdk": "^5.2.4",
+    "@angular/material": "^5.2.4",
+    "array-includes": "^3.0.3",
+    "bignumber": "^1.1.0",
+    "body-parser": "1.18.3",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

@@ -1,0 +1,45 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width:95%;
+	margin: 0 auto;
+}
+
+header {
+	text-align: center;
+}
+
+.center {
+	margin-left: 40%;
+}
+.row {
+	padding: .25rem;
+}
+
+.tobeSend {
+	width: 50rem;
+	height: 25rem;
+}
+#send {
+	margin-right: 5rem; 
+}
+
+#returnVal {
+	position: fixed;
+	width: 10rem;
+	height: 25rem;
+	top: 6rem;
+	left: 54rem;
+	width: 20rem;
+	height: 25rem;
+	overflow-y:scroll;
+}
+
+
+.tobeSend , #returnVal{
+		font-family: Consolas;
+	font-size:  14px;
+}

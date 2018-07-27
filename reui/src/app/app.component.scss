@@ -1,0 +1,18 @@
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .residebar {
+            position: fixed;
+            top: 64px;
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            min-width: 260px;
+            background-color: #fafafa;
+            box-shadow: 6px 0 6px rgba(0,0,0,.1);
+    }
+}
